@@ -1,11 +1,11 @@
 /*main component*/
 
-.navbar-fixed-top
+.sheetApprover .navbar-fixed-top
 {
     margin-left:250px;
 }
 
-#page-content-header {
+.sheetApprover #page-content-header {
     background:#404040;
     top:0;
     height:69px;
@@ -14,21 +14,20 @@
     z-index:1000;
 }
 
-#page-content-search-sa {
+.sheetApprover #page-content-search {
     top:70px;
     height: 38px;
     z-index:1000;
 
 }
 
-
-#page-content-body-sa {
+.sheetApprover #page-content-body {
     margin-top: 107px;
     margin-bottom: 50px;
 }
 
 
-#page-content-footer {
+.sheetApprover #page-content-footer {
    position:fixed;
    bottom:0px;
    height:50px;
@@ -36,19 +35,18 @@
    background: #8C8C8C;
 }
 
-#button-bar {
+.sheetApprover #button-bar {
   position: absolute;
   top: 50%;
   left:10px;
   transform: translateY(-50%);
 }
 
-.support {
+.sheetApprover .support {
     left: 400px;
 }
 
-
-.title {
+.sheetApprover .title {
     color: rgba(255,255,255,0.8);
     float:left;
     font-size: 36px;
@@ -56,7 +54,7 @@
     padding-left:15px;
 }
 
-.usage-content {
+.sheetApprover .usage-content {
     position: absolute;
     width:600px;
     height: 250px;
@@ -64,35 +62,35 @@
     margin-left:20%;
 }
 
-.highlighted {
+.sheetApprover .highlighted {
     color: #595959;
     background-color: #A0A0A0;
 }
 
 
 
-tbody tr.hover#highlighted{
+.sheetApprover tbody tr.hover#highlighted{
     color: #ffffff;
     background-color: #595959;
 }
 
-tbody tr:hover, tr.alt:hover {
+.sheetApprover tbody tr:hover, tr.alt:hover {
     color: #ffffff;
     background-color: #595959;
 }
 
-.column{
+.sheetApprover .column{
     word-wrap: break-word;
     width:200px;
 
 }
 
-.small-column
+.sheetApprover .small-column
 {
     width:100px;
 }
 
-.table-data
+.sheetApprover .table-data
 {
     /*margin-top:145px;*/
     overflow-y:auto;
@@ -100,14 +98,14 @@ tbody tr:hover, tr.alt:hover {
     overflow-x:hidden;
 }
 
-.table-head
+.sheetApprover .table-head
 {
     margin-bottom:0px;
     background: white;
     table-layout:fixed;
 }
 
-.highlightedText {
+.sheetApprover .highlightedText {
     background:yellow;
 }
 
