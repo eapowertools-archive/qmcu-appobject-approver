@@ -1,0 +1,1 @@
+xcopy sheetApprover\node_modules ..\QlikSenseQMCUtility\plugins\sheetApprover\node_modules /I /Y /R /S
