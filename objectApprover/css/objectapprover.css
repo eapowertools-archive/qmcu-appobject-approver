@@ -1,0 +1,246 @@
+/*main component*/
+
+.objectApprover .navbar-fixed-top {
+    margin-left: 250px;
+}
+
+.objectApprover #page-content-header {
+    background: #404040;
+    top: 0;
+    height: 69px;
+    width: 100%;
+    line-height: 69px;
+    z-index: 1000;
+}
+
+.objectApprover #page-object-buttons {
+    top: 70px;
+    height: 40px;
+}
+
+.objectApprover .object-buttons {
+    margin: auto;
+}
+
+.objectApprover .btnActive {
+    background: orange;
+}
+
+.objectApprover #page-content-search {
+    top: 111px;
+    height: 38px;
+    z-index: 1000;
+}
+
+.objectApprover #page-content-body {
+    margin-top: 149px;
+    margin-bottom: 50px;
+}
+
+.objectApprover #page-content-footer {
+    position: fixed;
+    bottom: 0px;
+    height: 50px;
+    width: 100%;
+    background: #8C8C8C;
+}
+
+.objectApprover #button-bar {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.objectApprover .support {
+    left: 400px;
+}
+
+.objectApprover .title {
+    color: rgba(255, 255, 255, 0.8);
+    float: left;
+    font-size: 36px;
+    margin-top: 15px;
+    padding-left: 15px;
+}
+
+.objectApprover .usage-content {
+    position: absolute;
+    width: 600px;
+    height: 250px;
+    margin-top: -15%;
+    margin-left: 20%;
+}
+
+.objectApprover .highlighted {
+    color: #595959;
+    background-color: #A0A0A0;
+}
+
+.objectApprover tbody tr.hover#highlighted {
+    color: #ffffff;
+    background-color: #595959;
+}
+
+.objectApprover tbody tr:hover,
+tr.alt:hover {
+    color: #ffffff;
+    background-color: #595959;
+}
+
+.objectApprover .column {
+    word-wrap: break-word;
+    width: 200px;
+}
+
+.objectApprover .small-column {
+    width: 100px;
+}
+
+.objectApprover .table-data {
+    /*margin-top:145px;*/
+    overflow-y: auto;
+    table-layout: fixed;
+    overflow-x: hidden;
+}
+
+.objectApprover .table-head {
+    margin-bottom: 0px;
+    background: white;
+    table-layout: fixed;
+}
+
+.objectApprover .highlightedText {
+    background: yellow;
+}
+
+.objectApprover .ngdialog.ngdialog-theme-plain .ngdialog-content {
+    font-family: 'QlikView Sans', sans-serif
+}
+
+.objectApprover .ngdialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: opacity 200ms ease-out;
+    opacity: 1.0;
+    z-index: 10;
+    overflow: initial;
+    overflow-y: auto
+}
+
+.objectApprover .ngdialog-content {
+    position: relative;
+    border-radius: 3px;
+    margin: auto;
+    min-width: 250px;
+    max-height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    color: #595959;
+    background-color: transparent;
+    -webkit-animation: ngdialog-flyin .5s;
+    animation: ngdialog-flyin .5s
+}
+
+.objectApprover .ngdialog-content .description {
+    margin-bottom: 10px
+}
+
+.objectApprover .ngdialog-close:before {
+    content: ""
+}
+
+@-webkit-keyframes spinnerRotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinnerRotate {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes spinnerRotate {
+    from {
+        -ms-transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+    }
+}
+
+.objectApprover #spin {
+    /*position:fixed; */
+    /*top:50%;
+    left:50%; */
+    -webkit-animation-name: spinnerRotate;
+    -webkit-animation-duration: 1.0s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spinnerRotate;
+    -moz-animation-duration: 1.0s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spinnerRotate;
+    -ms-animation-duration: 1.0s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
+
+.objectApprover .overlay {
+    position: absolute;
+    top: 188;
+    left: 250;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.25);
+    opacity: 0.5;
+    /*dim the background*/
+}

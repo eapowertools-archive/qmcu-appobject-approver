@@ -1,85 +1,85 @@
 {
     "entity": "App.Object",
-    "columns": [
-        {
+    "columns": [{
             "colNum": 1,
-            "friendlyName": "Sheet Name",
+            "friendlyName": "Object Name",
             "display": true,
-            "colWidth":200,
+            "colWidth": 200,
             "name": "name",
             "columnType": "Property",
             "definition": "name"
         },
         {
             "colNum": 2,
-            "friendlyName": "Sheet Owner",
+            "friendlyName": "Object Type",
             "display": true,
-            "colWidth":200,
+            "colWidth": 100,
+            "name": "objectType",
+            "columnType": "Property",
+            "definition": "objectType"
+        },
+        {
+            "colNum": 3,
+            "friendlyName": "Owner",
+            "display": true,
+            "colWidth": 200,
             "name": "owner",
             "columnType": "Property",
             "definition": "owner.name"
         },
         {
-            "colNum": 3,
+            "colNum": 4,
             "friendlyName": "Approved?",
             "display": true,
-            "colWidth":100,
+            "colWidth": 100,
             "name": "approved",
             "columnType": "Property",
             "definition": "approved"
         },
         {
-            "colNum": 4,
+            "colNum": 5,
             "friendlyName": "Published?",
             "display": true,
-            "colWidth":100,
+            "colWidth": 100,
             "name": "published",
             "columnType": "Property",
             "definition": "published"
         },
         {
-            "colNum": 5,
+            "colNum": 6,
             "friendlyName": "Last Modified",
             "display": true,
-            "colWidth":200,
+            "colWidth": 200,
             "name": "modifiedDate",
             "columnType": "Property",
             "definition": "modifiedDate"
         },
         {
-            "colNum": 6,
+            "colNum": 7,
             "friendlyName": "App",
             "display": true,
-            "colWidth":200,
+            "colWidth": 200,
             "name": "app.name",
             "columnType": "Property",
             "definition": "app.name"
         },
         {
-            "colNum": 7,
+            "colNum": 8,
             "friendlyName": "Stream",
-            "colWidth":200,
+            "colWidth": 200,
             "display": true,
             "name": "app.stream.name",
             "columnType": "Property",
             "definition": "app.stream.name"
         },
         {
-            "colNum": 8,
-            "friendlyName": "Sheet ID",
+            "colNum": 9,
+            "friendlyName": "ID",
             "display": true,
-            "colWidth":200,
+            "colWidth": 200,
             "name": "id",
             "columnType": "Property",
             "definition": "id"
-        },
-        {
-            "colNum": 1,
-            "friendlyName": "Object Type",
-            "display": false,
-            "name": "objectType",
-            "columnType": "Property",
-            "definition": "objectType"
         }
     ]
 }
