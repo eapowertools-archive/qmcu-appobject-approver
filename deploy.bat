@@ -1,1 +1,1 @@
-xcopy sheetApprover ..\QlikSenseQMCUtility\plugins\sheetApprover /I /Y /R /S /EXCLUDE:exclusionList.txt
+xcopy objectApprover ..\QlikSenseQMCUtility\plugins\objectApprover /I /Y /R /S /EXCLUDE:exclusionList.txt

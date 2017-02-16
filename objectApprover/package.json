@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/eapowertools/qmcu-sheet-approver#readme",
   "dependencies": {
+    "bluebird": "^3.4.7",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "extend": "^3.0.0",
     "fs": "0.0.1-security",
+    "leonardo-ui": "^1.0.2",
     "qrs-interact": "^2.1.0"
   }
 }
