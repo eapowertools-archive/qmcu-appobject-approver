@@ -4,6 +4,6 @@
     "stage": "beta",
     "clientFiles": [
         "plugins/objectApprover/objectapprover.component.js",
-        "plugins/objectApprover/css/scheduler.css"
+        "plugins/objectApprover/css/objectapprover.css"
     ]
 }
