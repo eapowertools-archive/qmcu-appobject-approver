@@ -1,29 +1,33 @@
-<div class="navbar-fixed-top">
-    <div id="page-content-header">
-        <h1 class="title">App Object Approver</h1>
-        <button style="float:right;margin-right:20px;margin-top:20px;" class="lui-button  lui-button--toolbar-inverse" id="help-dialog" ng-click="model.openHelp()">?</button>
+<div>
+    <div id="page-content-header" class="navbar-fixed-top flex-container">
+        <h1 class="title">App Object Approver on: {{model.host}}</h1>
+        <button style="float:right;margin-right:400px;margin-top:20px;" class="lui-button  lui-button--toolbar-inverse" id="help-dialog" ng-click="model.openHelp()">?</button>
     </div>
-    <div id="page-object-buttons" class="lui-bg-inverse">
-        <div class="lui-text-inverse" style="display:inline;padding-right:5px;">Filter by: </div>
-        <button class=" lui-button btnActive lui-button--inverse object-buttons lui-button--large" ng-class="model.showSheets ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
-            ng-click="model.toggleSheets()">Sheets</button>
-        <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showStories ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
-            ng-click="model.toggleStories()">Stories</button>
-        <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showBookmarks ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
-            ng-click="model.toggleBookmarks()">Bookmarks</button>
-        <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showDimensions ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
-            ng-click="model.toggleDimensions()">Dimensions</button>
-        <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showMeasures ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
-            ng-click="model.toggleMeasures()">Measures</button>
-        <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showMasterObjects ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large '"
-            ng-click="model.toggleMasterObjects()">Master Objects</button>
-    </div>
-    <div id="page-content-search">
-        <div class="lui-bg-inverse">
-            <div class="lui-search lui-search--inverse">
-                <span class="lui-search__search-icon"></span>
-                <input type="text" class="lui-search__input" maxlength="255" spellcheck="false" placeholder="Search" ng-model="searchSheets" />
-                <span class="lui-search__clear-icon" ng-click="searchSheets = null"></span>
+    <div id="second-header">
+        <div id="page-object-buttons" class="lui-bg-inverse">
+            <div class="lui-text-inverse" style="display:inline;padding-right:5px;">Filter by: </div>
+            <button class=" lui-button btnActive lui-button--inverse object-buttons lui-button--large" ng-class="model.showSheets ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
+                ng-click="model.toggleSheets()">Sheets</button>
+            <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showStories ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
+                ng-click="model.toggleStories()">Stories</button>
+            <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showBookmarks ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
+                ng-click="model.toggleBookmarks()">Bookmarks</button>
+            <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showDimensions ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
+                ng-click="model.toggleDimensions()">Dimensions</button>
+            <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showMeasures ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
+                ng-click="model.toggleMeasures()">Measures</button>
+            <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showMasterObjects ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large '"
+                ng-click="model.toggleMasterObjects()">Master Objects</button>
+        </div>
+        <div id="page-content-search">
+            <div class="lui-bg-inverse">
+                <div class="lui-search lui-search--inverse" style="
+    padding-left: 5px;
+">
+                    <span class="lui-search__search-icon"></span>
+                    <input type="text" class="lui-search__input" maxlength="255" spellcheck="false" placeholder="Search" ng-model="searchSheets" />
+                    <span class="lui-search__clear-icon" ng-click="searchSheets = null"></span>
+                </div>
             </div>
         </div>
     </div>

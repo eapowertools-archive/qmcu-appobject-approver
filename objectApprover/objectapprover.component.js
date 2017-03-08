@@ -43,7 +43,7 @@
             });
     }
 
-    function objectBodyController($scope, $http, ngDialog) {
+    function objectBodyController($scope, $http, ngDialog, qmcuWindowLocationService) {
         var model = this;
         var colNames = [];
         model.columnNames = [];
@@ -57,6 +57,7 @@
         model.showMeasures = false;
         model.showMasterObjects = false;
         model.modal = false;
+        model.host = qmcuWindowLocationService.host;
 
         model.$onInit = function() {
             fetchTableHeaders($http).then(function(table) {
@@ -302,7 +303,7 @@
         transclude: true,
         templateUrl: "plugins/objectApprover/object-approver-body.html",
         controllerAs: "model",
-        controller: ["$scope", "$http", "ngDialog", objectBodyController]
+        controller: ["$scope", "$http", "ngDialog", "qmcuWindowLocationService", objectBodyController]
     });
 
     module.filter('highlight', function() {
