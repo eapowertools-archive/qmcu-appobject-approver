@@ -3,14 +3,14 @@
     var module = angular.module("QMCUtilities", ["ngDialog"])
 
     function fetchTableHeaders($http) {
-        return $http.get("/objectapprover/data/tableDef.json")
+        return $http.get("./objectapprover/data/tableDef.json")
             .then(function(response) {
                 return response.data;
             });
     }
 
     function fetchTableRows($http, type) {
-        return $http.get('/objectapprover/getObjects/' + type)
+        return $http.get('./objectapprover/getObjects/' + type)
             //return $http.get("data/testData.json")
             .then(function(response) {
                 return response.data;
@@ -20,7 +20,7 @@
     function approveSheets($http, objects) {
 
         var objectIds = objects.map(function(object) { return object['objectId']; });
-        return $http.post('/objectapprover/approveSheets', objectIds)
+        return $http.post('./objectapprover/approveSheets', objectIds)
             .then(function(response) {
                 return response;
             });
@@ -29,7 +29,7 @@
     function publishObjects($http, objectIds, command) {
 
         console.log(objectIds);
-        return $http.post("/objectapprover/publish/" + command, objectIds)
+        return $http.post("./objectapprover/publish/" + command, objectIds)
             .then(function(response) {
                 return response;
             })
@@ -37,13 +37,13 @@
 
     function unapproveSheets($http, objects) {
         var objectIds = objects.map(function(object) { return object['objectId']; });
-        return $http.post('/objectapprover/unapproveSheets', objectIds)
+        return $http.post('./objectapprover/unapproveSheets', objectIds)
             .then(function(response) {
                 return response;
             });
     }
 
-    function objectBodyController($scope, $http, ngDialog) {
+    function objectBodyController($scope, $http, ngDialog, qmcuWindowLocationService) {
         var model = this;
         var colNames = [];
         model.columnNames = [];
@@ -57,6 +57,7 @@
         model.showMeasures = false;
         model.showMasterObjects = false;
         model.modal = false;
+        model.host = qmcuWindowLocationService.host;
 
         model.$onInit = function() {
             fetchTableHeaders($http).then(function(table) {
@@ -302,7 +303,7 @@
         transclude: true,
         templateUrl: "plugins/objectApprover/object-approver-body.html",
         controllerAs: "model",
-        controller: ["$scope", "$http", "ngDialog", objectBodyController]
+        controller: ["$scope", "$http", "ngDialog", "qmcuWindowLocationService", objectBodyController]
     });
 
     module.filter('highlight', function() {

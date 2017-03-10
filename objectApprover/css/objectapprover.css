@@ -1,5 +1,17 @@
 /*main component*/
 
+.objectApprover .flex-container {
+    display: -webkit-inline-flex;
+    /* Safari */
+    display: inline-flex;
+    -webkit-flex-wrap: nowrap;
+    /* Safari */
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    /* Safari */
+    justify-content: space-between;
+}
+
 .objectApprover .navbar-fixed-top {
     margin-left: 250px;
 }
@@ -7,15 +19,27 @@
 .objectApprover #page-content-header {
     background: #404040;
     top: 0;
-    height: 69px;
+    height: 60px;
     width: 100%;
-    line-height: 69px;
-    z-index: 1000;
+    /*line-height: 69px;
+    z-index: 1000;*/
+}
+
+.objectApprover #second-header {
+    position: fixed;
+    width: 100%;
+    top: 60px;
+    height: 88px;
+    background: #404040;
+    z-index: 5000;
 }
 
 .objectApprover #page-object-buttons {
+    position: fixed;
     top: 70px;
     height: 40px;
+    z-index: 1000;
+    padding-left: 5px;
 }
 
 .objectApprover .object-buttons {
@@ -27,13 +51,15 @@
 }
 
 .objectApprover #page-content-search {
+    position: fixed;
     top: 111px;
     height: 38px;
+    width: 100%;
     z-index: 1000;
 }
 
 .objectApprover #page-content-body {
-    margin-top: 149px;
+    margin-top: 89px;
     margin-bottom: 50px;
 }
 
@@ -60,8 +86,9 @@
     color: rgba(255, 255, 255, 0.8);
     float: left;
     font-size: 36px;
-    margin-top: 15px;
+    margin-top: 10px;
     padding-left: 15px;
+    white-space: nowrap;
 }
 
 .objectApprover .usage-content {

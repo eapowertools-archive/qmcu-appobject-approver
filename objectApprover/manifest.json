@@ -1,5 +1,9 @@
 {
     "title": "App Object Approver",
     "pluginDir": "objectApprover",
-    "stage": "beta"
+    "stage": "beta",
+    "clientFiles": [
+        "plugins/objectApprover/objectapprover.component.js",
+        "plugins/objectApprover/css/objectapprover.css"
+    ]
 }
