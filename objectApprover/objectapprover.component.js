@@ -226,10 +226,8 @@
         model.approve = function() {
             var objectsToPublish = [];
             model.outputs.forEach(function(item) {
-                if ((item.type == "bookmark" ||
-                        item.type == "dimension" ||
-                        item.type == "measure" ||
-                        item.type == "masterobject") && item.publishedState == "Not published") {
+                if ((item.type !== "sheet" ||
+                        item.type !== "story") && item.publishedState == "Not published") {
                     objectsToPublish.push(item.objectId);
                 }
             })
@@ -264,10 +262,8 @@
         model.unapprove = function() {
             var objectsToUnPublish = [];
             model.outputs.forEach(function(item) {
-                if ((item.type == "bookmark" ||
-                        item.type == "dimension" ||
-                        item.type == "measure" ||
-                        item.type == "masterobject") && item.publishedState == "Published") {
+                if ((item.type !== "sheet" ||
+                        item.type !== "story") && item.publishedState == "Published") {
                     objectsToUnPublish.push(item.objectId);
                 }
             })
