@@ -224,15 +224,18 @@
         }
 
         model.approve = function() {
-            var bookmarksToPublish = [];
+            var objectsToPublish = [];
             model.outputs.forEach(function(item) {
-                if (item.type == "bookmark" && item.publishedState == "Not published") {
-                    bookmarksToPublish.push(item.objectId);
+                if ((item.type == "bookmark" ||
+                        item.type == "dimension" ||
+                        item.type == "measure" ||
+                        item.type == "masterobject") && item.publishedState == "Not published") {
+                    objectsToPublish.push(item.objectId);
                 }
             })
 
-            if (bookmarksToPublish.length > 0) {
-                publishObjects($http, bookmarksToPublish, 'publish')
+            if (objectsToPublish.length > 0) {
+                publishObjects($http, objectsToPublish, 'publish')
                     .then(function(result) {
                         console.log(result);
                         approveSheets($http, model.outputs)
@@ -259,14 +262,17 @@
         };
 
         model.unapprove = function() {
-            var bookmarksToUnPublish = [];
+            var objectsToUnPublish = [];
             model.outputs.forEach(function(item) {
-                if (item.type == "bookmark" && item.publishedState == "Published") {
-                    bookmarksToUnPublish.push(item.objectId);
+                if ((item.type == "bookmark" ||
+                        item.type == "dimension" ||
+                        item.type == "measure" ||
+                        item.type == "masterobject") && item.publishedState == "Published") {
+                    objectsToUnPublish.push(item.objectId);
                 }
             })
-            if (bookmarksToUnPublish.length > 0) {
-                publishObjects($http, bookmarksToUnPublish, 'unpublish')
+            if (objectsToUnPublish.length > 0) {
+                publishObjects($http, objectsToUnPublish, 'unpublish')
                     .then(function(result) {
                         unapproveSheets($http, model.outputs)
                             .then(function(response) {
