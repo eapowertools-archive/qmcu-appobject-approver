@@ -226,7 +226,7 @@
         model.approve = function() {
             var objectsToPublish = [];
             model.outputs.forEach(function(item) {
-                if ((item.type !== "sheet" ||
+                if ((item.type !== "sheet" &&
                         item.type !== "story") && item.publishedState == "Not published") {
                     objectsToPublish.push(item.objectId);
                 }
@@ -262,7 +262,7 @@
         model.unapprove = function() {
             var objectsToUnPublish = [];
             model.outputs.forEach(function(item) {
-                if ((item.type !== "sheet" ||
+                if ((item.type !== "sheet" &&
                         item.type !== "story") && item.publishedState == "Published") {
                     objectsToUnPublish.push(item.objectId);
                 }
