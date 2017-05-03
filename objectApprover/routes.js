@@ -7,14 +7,23 @@ var qrsInteract = require('qrs-interact');
 var config = require('./config');
 var Promise = require('bluebird');
 
-var qrsConfig = {
-    hostname: config.qrs.hostname,
-    localCertPath: config.qrs.localCertPath,
-    headers: {
-        "Cookie": "",
-        "Content-Type": "application/json"
-    }
-};
+var qrsConfig;
+
+if (!config.thisServer.devMode) {
+    qrsConfig = {
+        hostname: config.qrs.hostname,
+        localCertPath: config.qrs.localCertPath,
+        headers: {
+            "Cookie": "",
+            "Content-Type": "application/json"
+        }
+    };
+} else {
+    qrsConfig = {
+        hostname: config.qrs.hostname,
+        localCertPath: config.qrs.localCertPath
+    };
+}
 
 var qrs = new qrsInteract(qrsConfig);
 
