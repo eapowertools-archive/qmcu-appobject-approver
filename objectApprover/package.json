@@ -1,28 +1,28 @@
 {
-    "name": "qmcu-sheet-approver",
-    "version": "1.0.0",
-    "description": "This QMC Utilities plugin will allow users to promote community sheets to approved base sheets.",
-    "main": "sheetapprover.component.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/eapowertools/qmcu-sheet-approver.git"
-    },
-    "author": "Qlik EAPowerTools",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/eapowertools/qmcu-sheet-approver/issues"
-    },
-    "homepage": "https://github.com/eapowertools/qmcu-sheet-approver#readme",
-    "dependencies": {
-        "bluebird": "^3.4.7",
-        "body-parser": "^1.15.2",
-        "express": "^4.14.0",
-        "extend": "^3.0.0",
-        "fs": "0.0.1-security",
-        "leonardo-ui": "^1.0.2",
-        "qrs-interact": "^2.5.2"
-    }
+  "name": "qmcu-sheet-approver",
+  "version": "1.0.0",
+  "description": "This QMC Utilities plugin will allow users to promote community sheets to approved base sheets.",
+  "main": "sheetapprover.component.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eapowertools/qmcu-sheet-approver.git"
+  },
+  "author": "Qlik EAPowerTools",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eapowertools/qmcu-sheet-approver/issues"
+  },
+  "homepage": "https://github.com/eapowertools/qmcu-sheet-approver#readme",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "extend": "^3.0.0",
+    "fs": "0.0.1-security",
+    "leonardo-ui": "^1.0.2",
+    "qrs-interact": "^2.5.4"
+  }
 }
