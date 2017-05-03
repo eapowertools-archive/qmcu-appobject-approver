@@ -18,7 +18,7 @@ var qrsConfig = {
 
 var qrs = new qrsInteract(qrsConfig);
 
-if (!config.devMode) {
+if (!config.thisServer.devMode) {
     router.use(function(req, res, next) {
         // console.log("session cookie in use: " + sessionName[0].sessionCookieHeaderName);
         // console.log("cookie to be used: " + cookies[0]);
