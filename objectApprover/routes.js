@@ -18,17 +18,19 @@ var qrsConfig = {
 
 var qrs = new qrsInteract(qrsConfig);
 
+if (!config.devMode) {
+    router.use(function(req, res, next) {
+        // console.log("session cookie in use: " + sessionName[0].sessionCookieHeaderName);
+        // console.log("cookie to be used: " + cookies[0]);
+        if (req.proxyPath.length !== 0) {
+            qrs.UpdateVirtualProxyPrefix(req.proxyPath.replace("/", ""));
+        }
+        qrs.UseCookie(req.sessionCookieToUse);
 
-router.use(function(req, res, next) {
-    // console.log("session cookie in use: " + sessionName[0].sessionCookieHeaderName);
-    // console.log("cookie to be used: " + cookies[0]);
-    if (req.proxyPath.length !== 0) {
-        qrs.UpdateVirtualProxyPrefix(req.proxyPath.replace("/", ""));
-    }
-    qrs.UseCookie(req.sessionCookieToUse);
+        next();
+    })
+}
 
-    next();
-})
 
 router.use('/data', express.static(config.thisServer.pluginPath + "/objectApprover/data"));
 
