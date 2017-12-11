@@ -12,6 +12,9 @@
                 ng-click="model.toggleStories()">Stories</button>
             <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showBookmarks ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
                 ng-click="model.toggleBookmarks()">Bookmarks</button>
+            <!-- Websy. New button to toggle snapshots on and off -->
+            <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showSnapshots ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
+                ng-click="model.toggleSnapshots()">Snapshots</button>
             <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showDimensions ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
                 ng-click="model.toggleDimensions()">Dimensions</button>
             <button class="lui-button lui-button--inverse object-buttons lui-button--large" ng-class="model.showMeasures ? 'lui-button lui-button--inverse btnActive object-buttons lui-button--large' : 'lui-button lui-button--inverse object-buttons lui-button--large'"
@@ -40,7 +43,7 @@
                     <col style="width:85px;min-width:85px;max-width:85px;">
                     <col style="width:150px;min-width:100px;max-width:200px;">
                     <col style="width:100px;min-width:100px;max-width:150px;">
-                    <col style="width:100px;min-width:100px;max-width:150px;">
+                    <col style="width:100px;min-width:100px;max-width:100px;">
                     <col style="width:100px;min-width:100px;max-width:100px;">
                     <col style="width:100px;min-width:100px;max-width:100px;">
                     <col style="width:100px;min-width:150px;max-width:150px;">
@@ -79,6 +82,8 @@
     <div id="button-bar">
         <button id="buttonapprove" class="lui-button" ng-class="model.approveButtonValid() ? 'lui-button--toolbar-inverse' : 'lui-disabled'" ng-click="model.approve()">Approve Object</button>
         <button id="buttonunapprove" class="lui-button" ng-class="model.unapproveButtonValid() ? 'lui-button--toolbar-inverse' : 'lui-disabled'" ng-click="model.unapprove()">Un-Approve Object</button>
+        <!-- Websy. New button to delete objects -->
+        <button id="buttondelete" class="lui-button" ng-class="model.outputs.length==0?'lui-disabled':'lui-button--toolbar-inverse'" ng-click="model.confirmDelete()">Delete Selected</button>
     </div>
 </div>
 
@@ -91,6 +96,24 @@
             </div>
 
         </div>
+
+    </div>
+</div>
+<!-- Websy. New popup dialog to confirm deletion of objects -->
+<div class="frame" style="position: fixed;top:0px;left:0px;bottom:0px;right:0px;overflow-y: auto; " ng-show="model.showConfirmDelete">
+    <div class="overlay" style="opacity: 1;">
+      <div class="lui-dialog  lui-dialog--inverse" style="width: 400px;  top: 200px;">
+        <div class="lui-dialog__header">
+          <div class="lui-dialog__title">Delete Selected Items</div>
+        </div>
+        <div class="lui-dialog__body">
+          Are you sure you want to delete the selected items? This action cannot be undone.
+        </div>
+        <div class="lui-dialog__footer">
+          <button class="lui-button  lui-dialog__button  lui-button--inverse" ng-click="model.cancelDelete()">Cancel</button>
+          <button class="lui-button  lui-dialog__button  lui-button--inverse  close-button" ng-click="model.deleteItems()">Delete</button>
+        </div>
+      </div>
 
     </div>
 </div>

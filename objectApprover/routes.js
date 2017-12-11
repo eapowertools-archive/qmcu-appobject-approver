@@ -117,6 +117,30 @@ router.route('/publish/:publishcommand')
             });
     });
 
+// Websy. New route to handle object deletions
+router.route('/delete')
+    .post(parseUrlencoded, function(request, response) {
+        console.log("delete");
+        Promise.all(request.body.map(function(objectId) {
+                return qrs.Delete('app/object/' + objectId)
+                    .then(function(result) {
+                        message.success = true;
+                        message.result = result;
+                        return message;
+                    })
+                    .catch(function(error) {
+                        return error;
+                        // response.send(error);
+                    });
+            }))
+            .then(function(resultArray) {
+                response.send(resultArray);
+            })
+            .catch(function(error) {
+                response.send(error)
+            });
+    });
+
 router.route('/approveSheets')
     .post(parseUrlencoded, function(request, response) {
         console.log("approveSheets");

@@ -43,6 +43,14 @@
             });
     }
 
+    //Websy addition. Function to delete objects
+    function deleteObjects($http, objectIds) {
+        return $http.post("./objectapprover/delete", objectIds)
+            .then(function(response) {
+                return response;
+            })
+    }
+
     function objectBodyController($scope, $http, ngDialog, qmcuWindowLocationService) {
         var model = this;
         var colNames = [];
@@ -56,6 +64,7 @@
         model.showDimensions = false;
         model.showMeasures = false;
         model.showMasterObjects = false;
+        model.showConfirmDelete = false;
         model.modal = false;
         model.host = qmcuWindowLocationService.host;
 
@@ -88,6 +97,7 @@
         model.tableArrayOps = function(type, show) {
             model.modal = true;
             var resultArray = model.tableRows;
+            console.log(resultArray);
             if (show) {
                 fetchTableRows($http, type).then(function(response) {
                     for (var index = 0; index < response.rows.length; index++) {
@@ -135,6 +145,18 @@
                 model.showBookmarks = false;
             }
             model.tableArrayOps('bookmark', model.showBookmarks);
+
+        }
+
+        // Websy. New function to toggleSnapshots on and off
+        model.toggleSnapshots = function() {
+
+            if (!model.showSnapshots) {
+                model.showSnapshots = true;
+            } else {
+                model.showSnapshots = false;
+            }
+            model.tableArrayOps('snapshot', model.showSnapshots);
 
         }
 
@@ -299,7 +321,46 @@
                 scope: $scope
             });
         };
+
+        model.confirmDelete = function(){
+          model.showConfirmDelete = true;
+        }
+
+        model.cancelDelete = function(){
+          model.showConfirmDelete = false;
+        }
+
+        model.deleteItems = function(){
+          var objectsToDelete = [];
+          model.outputs.forEach(function(item) {
+            objectsToDelete.push(item.objectId);
+          })
+
+          if (objectsToDelete.length > 0) {
+              deleteObjects($http, objectsToDelete)
+                  .then(function(result) {
+                      for (var i = 0; i < objectsToDelete.length; i++) {
+                        deleteObjectById(objectsToDelete[i])
+                      }
+                      console.log(result);
+                      $scope.form.$setPristine();
+                      $scope.form.$setUntouched();
+                  });
+          }
+          model.showConfirmDelete = false;
+
+          function deleteObjectById(id){
+            for (var i = 0; i < model.tableRows.length; i++) {
+              if(model.tableRows[i][model.tableRows[i].length-1]==id){
+                model.tableRows.splice(i, 1)
+                return true;
+              }
+            }
+            return false;
+          }
+        }
     }
+
 
     module.component("objectApproverBody", {
         transclude: true,
