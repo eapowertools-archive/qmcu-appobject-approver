@@ -9,6 +9,6 @@ The App Object Approver enables users to approve sheets, stories, bookmarks, and
 ##How it Works
 To approve or un-approve objects, qualifying items will have a clear checkbox. Click the checkbox to activate and then select the appropriate approve or un-approve button that is relevant to the selections made.
 
-![1](https://s3.amazonaws.com/eapowertools/qmcutilities/appobjectapprover1.png)
+![1](https://github.com/eapowertools/QlikSenseQMCUtility/wiki/imgs/appobjectapprover1.png)
 
 App Object Approver facilitates multi-designer work flows in Qlik Sense applications by enabling user created app objects to become approved base app objects in an application through a simple interface.  Currently, there is no other way to make user created content base content in a Qlik Sense application.
